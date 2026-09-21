@@ -1,7 +1,7 @@
 import * as react from 'react';
 
-type SajtfotSajternaProps = {
-    /** Kundens case på kemero.io. Krediten pekar hit när sajten är såld. */
+type SajtfotProps = {
+    /** Kundens case på kemero.se. Krediten pekar hit när sajten är såld. */
     caseUrl: string;
     /** Endast för placering i footern. Använd inte för att tona om bandet. */
     className?: string;
@@ -14,9 +14,9 @@ type SajtfotSajternaProps = {
     /** Sökvägen till integritetspolicyn. Sidan ska finnas från dag ett. */
     privacyHref?: string;
     privacyLabel?: string;
-    /** Sajtens reservationssida på sajterna.se. */
+    /** Sajtens objektblad på kemero.se, där förhandsvisningen beställs. */
     reserveUrl: string;
 };
-declare function SajtfotSajterna({ caseUrl, className, forSale, legalName, legalSuffix, privacyHref, privacyLabel, reserveUrl, }: SajtfotSajternaProps): react.JSX.Element;
+declare function Sajtfot({ caseUrl, className, forSale, legalName, legalSuffix, privacyHref, privacyLabel, reserveUrl, }: SajtfotProps): react.JSX.Element;
 
-export { SajtfotSajterna, type SajtfotSajternaProps };
+export { Sajtfot, type SajtfotProps };

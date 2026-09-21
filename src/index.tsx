@@ -5,7 +5,7 @@ import "./sajtfot.css";
   Den låsta foten på en katalogsajt.
 
   Katalogsajternas footer byggs om i varje designpass. Det som INTE får byggas
-  om bor här: till salu-raden mot sajterna.se, integritetspolicy-länken och
+  om bor här: till salu-raden mot kemero.se, integritetspolicy-länken och
   kemero-krediten. Formulering, ordning och rytm är låsta i paketet, precis
   som märket är låst i @kemero/credit.
 
@@ -18,8 +18,8 @@ import "./sajtfot.css";
   statiskt utan klient-JavaScript.
 */
 
-export type SajtfotSajternaProps = {
-  /** Kundens case på kemero.io. Krediten pekar hit när sajten är såld. */
+export type SajtfotProps = {
+  /** Kundens case på kemero.se. Krediten pekar hit när sajten är såld. */
   caseUrl: string;
   /** Endast för placering i footern. Använd inte för att tona om bandet. */
   className?: string;
@@ -32,7 +32,7 @@ export type SajtfotSajternaProps = {
   /** Sökvägen till integritetspolicyn. Sidan ska finnas från dag ett. */
   privacyHref?: string;
   privacyLabel?: string;
-  /** Sajtens reservationssida på sajterna.se. */
+  /** Sajtens objektblad på kemero.se, där förhandsvisningen beställs. */
   reserveUrl: string;
 };
 
@@ -44,7 +44,7 @@ function currentYear() {
   return new Date().getFullYear();
 }
 
-export function SajtfotSajterna({
+export function Sajtfot({
   caseUrl,
   className,
   forSale,
@@ -53,12 +53,12 @@ export function SajtfotSajterna({
   privacyHref = "/integritetspolicy",
   privacyLabel = "Integritetspolicy",
   reserveUrl,
-}: SajtfotSajternaProps) {
+}: SajtfotProps) {
   return (
     <div className={className ? `sajtfot ${className}` : "sajtfot"}>
       {/*
         Besökaren som hittat hit direkt får veta att sajten går att köpa, och
-        sajterna.se får en länk med riktig ankartext från en publicerad
+        kemero.se får en länk med riktig ankartext från en publicerad
         webbplats. Varken demo-panelen eller krediten gör det jobbet.
       */}
       {forSale ? (
@@ -70,7 +70,7 @@ export function SajtfotSajterna({
             rel="noopener"
             target="_blank"
           >
-            sajterna.se
+            kemero.se
           </a>
           . Vi anpassar den till ditt företag med din logga, dina texter
           och dina bilder.
@@ -92,7 +92,7 @@ export function SajtfotSajterna({
             reservationssidan, med skälet att den som klickar undrar "kan jag
             få den här?" och inte "vem var kunden?". Det argumentet höll inte
             av två skäl. Raden RUNT krediten säger redan att sajten är till
-            salu och länkar till sajterna.se med riktig ankartext, alltså
+            salu och länkar till kemero.se med riktig ankartext, alltså
             dubblerade krediten en länk som redan fanns tio pixlar bort. Och
             märket är kemeros signatur, inte en köpknapp: den som klickar på
             en byrås logotyp i en fot vill till byrån, oavsett om sajten råkar

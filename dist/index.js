@@ -6,7 +6,7 @@ import { jsxs, jsx } from 'react/jsx-runtime';
 function currentYear() {
   return (/* @__PURE__ */ new Date()).getFullYear();
 }
-function SajtfotSajterna({
+function Sajtfot({
   caseUrl,
   className,
   forSale,
@@ -27,7 +27,7 @@ function SajtfotSajterna({
           href: reserveUrl,
           rel: "noopener",
           target: "_blank",
-          children: "sajterna.se"
+          children: "kemero.se"
         }
       ),
       ". Vi anpassar den till ditt f\xF6retag med din logga, dina texter och dina bilder."
@@ -49,4 +49,4 @@ function SajtfotSajterna({
   ] });
 }
 
-export { SajtfotSajterna };
+export { Sajtfot };

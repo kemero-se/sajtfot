@@ -1,6 +1,6 @@
-# @kemero/sajtfot-sajterna
+# @kemero/sajtfot
 
-Den låsta foten på en katalogsajt. Till salu-raden mot sajterna.se,
+Den låsta foten på en katalogsajt. Till salu-raden mot kemero.se,
 integritetspolicy-länken och kemero-krediten.
 
 Katalogsajternas footer byggs om i varje designpass, och det är meningen.
@@ -10,13 +10,13 @@ paketet, precis som märket är låst i `@kemero/credit`.
 ## Användning
 
 ```bash
-bun add @kemero/sajtfot-sajterna@github:kemero-io/sajtfot-sajterna
+bun add @kemero/sajtfot@github:kemero-se/sajtfot
 ```
 
 ```tsx
-import { SajtfotSajterna } from "@kemero/sajtfot-sajterna";
+import { Sajtfot } from "@kemero/sajtfot";
 
-<SajtfotSajterna
+<Sajtfot
   caseUrl={site.caseUrl}
   forSale={site.demoMode}
   legalName={business.legalName}
@@ -32,7 +32,7 @@ Avståndet ovanför bandet äger footern, resten äger paketet.
 
 I demoläge (`forSale`) en egen rad mellan två hårstreck, ordagrant:
 
-> Den här webbplatsen är till salu på sajterna.se. Vi anpassar den till ditt
+> Den här webbplatsen är till salu på kemero.se. Vi anpassar den till ditt
 > företag med din logga, dina texter och dina bilder.
 
 Under den en meta-rad med copyright till vänster och integritetspolicy plus
@@ -53,8 +53,8 @@ Bandet ärver också fontstorleken. Sätt den på footerns behållare.
 | Prop | Krävs | Beskrivning |
 |---|---|---|
 | `forSale` | ja | `site.demoMode`. Visar till salu-raden och pekar krediten på reservationssidan |
-| `reserveUrl` | ja | Sajtens reservationssida på sajterna.se |
-| `caseUrl` | ja | Kundens case på kemero.io, används när `forSale` är false |
+| `reserveUrl` | ja | Sajtens objektblad på kemero.se |
+| `caseUrl` | ja | Kundens case på kemero.se, används när `forSale` är false |
 | `legalName` | ja | Fullständigt bolagsnamn, t.ex. "Exempelfirman AB" |
 | `legalSuffix` | nej | Mening efter bolagsnamnet, t.ex. "Ledamöter av Sveriges advokatsamfund." |
 | `privacyHref` | nej | Standard `/integritetspolicy` |
