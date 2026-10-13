@@ -15,7 +15,7 @@ const bas = {
 describe("Sajtfot", () => {
   test("visar signaturen som standard", () => {
     const html = renderToStaticMarkup(<Sajtfot {...bas} />);
-    expect(html).toContain(">Sajt av kemero</a>");
+    expect(html).toContain("<span>Hemsida av</span>");
     expect(html).toContain('href="https://kemero.se"');
     expect(html).not.toContain("nofollow");
   });
@@ -23,7 +23,7 @@ describe("Sajtfot", () => {
   test("visa={false} renderar ingen signatur", () => {
     const html = renderToStaticMarkup(<Sajtfot {...bas} visa={false} />);
     expect(html).not.toContain("kemero-credit");
-    expect(html).not.toContain("Sajt av kemero");
+    expect(html).not.toContain("Hemsida av");
   });
 
   test("till salu-raden står kvar oförändrad med signaturen bortvald", () => {

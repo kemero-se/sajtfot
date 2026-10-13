@@ -1,7 +1,7 @@
 # @kemero/sajtfot
 
 Den låsta foten på en katalogsajt. Till salu-raden mot kemero.se,
-integritetspolicy-länken och signaturen "Sajt av kemero".
+integritetspolicy-länken och signaturen "Hemsida av kemero".
 
 Katalogsajternas footer byggs om i varje designpass, och det är meningen.
 Det som inte får byggas om bor här. Formulering, ordning och rytm är låsta i
@@ -36,7 +36,7 @@ I demoläge (`forSale`) en egen rad mellan två hårstreck, ordagrant:
 > företag med din logga, dina texter och dina bilder.
 
 Under den en meta-rad med copyright till vänster och integritetspolicyn
-plus signaturen "Sajt av kemero" till höger, på samma rad. Under 640 px står
+plus signaturen "Hemsida av kemero" till höger, på samma rad. Under 640 px står
 signaturen på en egen rad. `forSale` false tar bort till salu-raden.
 Årtalet i copyrighten räknas ut vid render.
 
@@ -60,7 +60,7 @@ Bandet ärver också fontstorleken. Sätt den på footerns behållare.
 |---|---|---|
 | `forSale` | ja | `site.demoMode`. Visar till salu-raden |
 | `reserveUrl` | ja | Sajtens objektblad på kemero.se |
-| `visa` | nej | Signaturen "Sajt av kemero". Standard `true`, `false` tar bort den |
+| `visa` | nej | Signaturen "Hemsida av kemero". Standard `true`, `false` tar bort den |
 | `legalName` | ja | Fullständigt bolagsnamn, t.ex. "Exempelfirman AB" |
 | `legalSuffix` | nej | Mening efter bolagsnamnet, t.ex. "Ledamöter av Sveriges advokatsamfund." |
 | `privacyHref` | nej | Standard `/integritetspolicy` |

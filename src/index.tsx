@@ -32,7 +32,7 @@ export type SajtfotProps = {
   privacyLabel?: string;
   /** Sajtens objektblad på kemero.se, där förhandsvisningen beställs. */
   reserveUrl: string;
-  /** Signaturen "Sajt av kemero". Standard true. false tar bort den helt, utan tom plats. */
+  /** Signaturen "Hemsida av kemero". Standard true. false tar bort den helt, utan tom plats. */
   visa?: boolean;
 };
 
