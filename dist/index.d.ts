@@ -1,11 +1,9 @@
 import * as react from 'react';
 
 type SajtfotProps = {
-    /** Kundens case på kemero.se. Krediten pekar hit när sajten är såld. */
-    caseUrl: string;
     /** Endast för placering i footern. Använd inte för att tona om bandet. */
     className?: string;
-    /** true i demoläge (site.demoMode). Visar till salu-raden och pekar krediten på reservationssidan. */
+    /** true i demoläge (site.demoMode). Visar till salu-raden. */
     forSale: boolean;
     /** Verksamhetens fullständiga bolagsnamn, t.ex. "Exempelfirman AB". */
     legalName: string;
@@ -16,7 +14,9 @@ type SajtfotProps = {
     privacyLabel?: string;
     /** Sajtens objektblad på kemero.se, där förhandsvisningen beställs. */
     reserveUrl: string;
+    /** Signaturen "Sajt av kemero". Standard true. false tar bort den helt, utan tom plats. */
+    visa?: boolean;
 };
-declare function Sajtfot({ caseUrl, className, forSale, legalName, legalSuffix, privacyHref, privacyLabel, reserveUrl, }: SajtfotProps): react.JSX.Element;
+declare function Sajtfot({ className, forSale, legalName, legalSuffix, privacyHref, privacyLabel, reserveUrl, visa, }: SajtfotProps): react.JSX.Element;
 
 export { Sajtfot, type SajtfotProps };

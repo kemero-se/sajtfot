@@ -1,7 +1,7 @@
 # @kemero/sajtfot
 
 Den låsta foten på en katalogsajt. Till salu-raden mot kemero.se,
-integritetspolicy-länken och kemero-krediten.
+integritetspolicy-länken och signaturen "Sajt av kemero".
 
 Katalogsajternas footer byggs om i varje designpass, och det är meningen.
 Det som inte får byggas om bor här. Formulering, ordning och rytm är låsta i
@@ -17,11 +17,11 @@ bun add @kemero/sajtfot@github:kemero-se/sajtfot
 import { Sajtfot } from "@kemero/sajtfot";
 
 <Sajtfot
-  caseUrl={site.caseUrl}
   forSale={site.demoMode}
   legalName={business.legalName}
   legalSuffix={footer.legalSuffix}
   reserveUrl={site.reserveUrl}
+  visa={site.signatur}
 />;
 ```
 
@@ -35,9 +35,15 @@ I demoläge (`forSale`) en egen rad mellan två hårstreck, ordagrant:
 > Den här webbplatsen är till salu på kemero.se. Vi anpassar den till ditt
 > företag med din logga, dina texter och dina bilder.
 
-Under den en meta-rad med copyright till vänster och integritetspolicy plus
-kemero-krediten till höger. `forSale` false tar bort till salu-raden och
-pekar krediten på kundens case. Årtalet i copyrighten räknas ut vid render.
+Under den en meta-rad med copyright till vänster och integritetspolicyn
+plus signaturen "Sajt av kemero" till höger, på samma rad. Under 640 px står
+signaturen på en egen rad. `forSale` false tar bort till salu-raden.
+Årtalet i copyrighten räknas ut vid render.
+
+Signaturen kommer från `@kemero/credit` och går alltid till kemero.se.
+Kunden kan välja bort den med `visa={false}`. Då renderas den inte alls och
+lämnar ingen tom plats. Läs värdet ur sajtens konfiguration, eller ur
+inställningarna i adminpanelen på Astro-sajterna.
 
 ## Färg och tema
 
@@ -52,9 +58,9 @@ Bandet ärver också fontstorleken. Sätt den på footerns behållare.
 
 | Prop | Krävs | Beskrivning |
 |---|---|---|
-| `forSale` | ja | `site.demoMode`. Visar till salu-raden och pekar krediten på reservationssidan |
+| `forSale` | ja | `site.demoMode`. Visar till salu-raden |
 | `reserveUrl` | ja | Sajtens objektblad på kemero.se |
-| `caseUrl` | ja | Kundens case på kemero.se, används när `forSale` är false |
+| `visa` | nej | Signaturen "Sajt av kemero". Standard `true`, `false` tar bort den |
 | `legalName` | ja | Fullständigt bolagsnamn, t.ex. "Exempelfirman AB" |
 | `legalSuffix` | nej | Mening efter bolagsnamnet, t.ex. "Ledamöter av Sveriges advokatsamfund." |
 | `privacyHref` | nej | Standard `/integritetspolicy` |
@@ -69,6 +75,7 @@ router-fritt med flit så det kan konsumeras av både TanStack Start och Astro.
 ```bash
 bun install
 bun run build
+bun test
 ```
 
 `dist/` är committad så att paketet kan konsumeras direkt som git-beroende

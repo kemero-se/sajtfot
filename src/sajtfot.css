@@ -67,10 +67,23 @@
   line-height: 1.6;
 }
 
+/*
+  Integritetspolicyn och signaturen står på samma rad till höger. Under
+  640 px får signaturen en egen rad under policyn.
+*/
 .sajtfot__links {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .sajtfot__links {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
 }
 
 .sajtfot__privacy {

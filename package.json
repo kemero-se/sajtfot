@@ -1,6 +1,6 @@
 {
   "name": "@kemero/sajtfot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Den låsta foten på en katalogsajt. Till salu-raden mot kemero.se, integritetspolicy-länken och kemero-krediten, samma struktur varje gång.",
   "license": "UNLICENSED",
   "private": true,
@@ -19,7 +19,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup && node scripts/postbuild.mjs"
+    "build": "tsup && node scripts/postbuild.mjs",
+    "test": "bun test"
   },
   "dependencies": {
     "@kemero/credit": "github:kemero-se/credit"
@@ -28,7 +29,10 @@
     "react": ">=19"
   },
   "devDependencies": {
+    "@types/bun": "^1.4.3",
     "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.3.0",
+    "react-dom": "19.2.8",
     "tsup": "^8.5.0",
     "typescript": "^5.9.0"
   }

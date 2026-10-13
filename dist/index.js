@@ -7,14 +7,14 @@ function currentYear() {
   return (/* @__PURE__ */ new Date()).getFullYear();
 }
 function Sajtfot({
-  caseUrl,
   className,
   forSale,
   legalName,
   legalSuffix,
   privacyHref = "/integritetspolicy",
   privacyLabel = "Integritetspolicy",
-  reserveUrl
+  reserveUrl,
+  visa = true
 }) {
   return /* @__PURE__ */ jsxs("div", { className: className ? `sajtfot ${className}` : "sajtfot", children: [
     forSale ? /* @__PURE__ */ jsxs("p", { className: "sajtfot__sale", children: [
@@ -43,7 +43,7 @@ function Sajtfot({
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "sajtfot__links", children: [
         /* @__PURE__ */ jsx("a", { className: "sajtfot__privacy", href: privacyHref, children: privacyLabel }),
-        /* @__PURE__ */ jsx(KemeroCredit, { caseUrl })
+        visa ? /* @__PURE__ */ jsx(KemeroCredit, {}) : null
       ] })
     ] })
   ] });

@@ -19,11 +19,9 @@ import "./sajtfot.css";
 */
 
 export type SajtfotProps = {
-  /** Kundens case på kemero.se. Krediten pekar hit när sajten är såld. */
-  caseUrl: string;
   /** Endast för placering i footern. Använd inte för att tona om bandet. */
   className?: string;
-  /** true i demoläge (site.demoMode). Visar till salu-raden och pekar krediten på reservationssidan. */
+  /** true i demoläge (site.demoMode). Visar till salu-raden. */
   forSale: boolean;
   /** Verksamhetens fullständiga bolagsnamn, t.ex. "Exempelfirman AB". */
   legalName: string;
@@ -34,6 +32,8 @@ export type SajtfotProps = {
   privacyLabel?: string;
   /** Sajtens objektblad på kemero.se, där förhandsvisningen beställs. */
   reserveUrl: string;
+  /** Signaturen "Sajt av kemero". Standard true. false tar bort den helt, utan tom plats. */
+  visa?: boolean;
 };
 
 /*
@@ -45,7 +45,6 @@ function currentYear() {
 }
 
 export function Sajtfot({
-  caseUrl,
   className,
   forSale,
   legalName,
@@ -53,6 +52,7 @@ export function Sajtfot({
   privacyHref = "/integritetspolicy",
   privacyLabel = "Integritetspolicy",
   reserveUrl,
+  visa = true,
 }: SajtfotProps) {
   return (
     <div className={className ? `sajtfot ${className}` : "sajtfot"}>
@@ -86,19 +86,11 @@ export function Sajtfot({
             {privacyLabel}
           </a>
           {/*
-            Krediten pekar alltid dit caseUrl pekar, också på en demo.
-
-            Den gjorde det inte förut. På en demo skickades den till
-            reservationssidan, med skälet att den som klickar undrar "kan jag
-            få den här?" och inte "vem var kunden?". Det argumentet höll inte
-            av två skäl. Raden RUNT krediten säger redan att sajten är till
-            salu och länkar till kemero.se med riktig ankartext, alltså
-            dubblerade krediten en länk som redan fanns tio pixlar bort. Och
-            märket är kemeros signatur, inte en köpknapp: den som klickar på
-            en byrås logotyp i en fot vill till byrån, oavsett om sajten råkar
-            vara till salu.
+            Signaturen går alltid till kemero.se, också på en demo. Den är
+            byråns namnteckning, inte en köpknapp; till salu-raden ovanför
+            gör köpjobbet. Kunden kan välja bort den med visa={false}.
           */}
-          <KemeroCredit caseUrl={caseUrl} />
+          {visa ? <KemeroCredit /> : null}
         </div>
       </div>
     </div>
