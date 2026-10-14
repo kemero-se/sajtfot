@@ -81,7 +81,7 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@kemero/credit": ["@kemero/credit@github:kemero-se/credit#a2e116d", { "peerDependencies": { "react": ">=19" } }, "kemero-se-credit-a2e116d", "sha512-9IioXPhB8wZd8s0VFHsSy1XbLG/qIGvoJPNXLAiN8sNlbBGB0BjQlf7W4Mwm1o5qV18fLBZlOFKpvSeEfIC+Kg=="],
+    "@kemero/credit": ["@kemero/credit@github:kemero-se/credit#713b9cd", { "peerDependencies": { "react": ">=19" } }, "kemero-se-credit-713b9cd", "sha512-MD2H9zOAiErMEVTuXQOUPvq6QigMwQkOxmYGda42AwgsCasbSAQr6l3y0c7aF63tIISr4fSEr4JPaqoF+CpbhA=="],
 
     "@napi-rs/lzma-linux-x64-gnu": ["@napi-rs/lzma-linux-x64-gnu@1.5.1", "", { "os": "linux", "cpu": "x64" }, "sha512-oTXEIha4SsuXdTA4Iyskj0kpdx2yVXdhd75c2v3xGrHFfVMsbhTPZU/nMPL4sWKo4pBHm3aucLaqGlF696dTyQ=="],
 
